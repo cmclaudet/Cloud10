@@ -13,6 +13,17 @@ local wintext = love.graphics.newImage("assets/youwinfont.png")
 local toohightext = love.graphics.newImage("assets/toohighfont.png")
 local toolowtext = love.graphics.newImage("assets/toolowfont.png")
 local playagaintext = love.graphics.newImage("assets/playagainfont.png")
+local timerMessage = love.graphics.newImage("assets/timermessage.png")
+
+--sounds
+local clearskies = love.audio.newSource("assets/sounds/ClearSkies.mp3", "static")
+local startsound = love.audio.newSource("assets/sounds/PressStart.mp3", "static")
+local droplet1 = love.audio.newSource("assets/sounds/droplet01.mp3", "static")
+local droplet2 = love.audio.newSource("assets/sounds/droplet02.mp3", "static")
+local droplet3 = love.audio.newSource("assets/sounds/droplet03.mp3", "static")
+local droplet4 = love.audio.newSource("assets/sounds/droplet04.mp3", "static")
+local droplet5 = love.audio.newSource("assets/sounds/droplet05.mp3", "static")
+local droplets = {droplet1,droplet2,droplet3,droplet4,droplet5}
 
 local font = love.graphics.newFont("assets/sitka-small-bold.ttf",60)
 
@@ -40,6 +51,9 @@ local timeGold = 0
 local spawnStormTimer = 0
 local canSpawnStorm = true
 
+local totalTime = 0
+local secondTime = 0
+
 function Restart(player,pickups,storms,goldclouds)
   player.x = winWidth/2
   player.y = winHeight/2
@@ -62,6 +76,8 @@ function Restart(player,pickups,storms,goldclouds)
   timeGold = 0
   spawnStormTimer = 0
   canSpawnStorm = true
+  totalTime = 0
+  secondTime = 0
 end
 
 function genPickupNum(player)
@@ -178,7 +194,9 @@ function checkSpawn(spawn,player)
   for i,Spawn in ipairs(spawn) do
     if checkCollision(player.collBox,Spawn.collBox) then
       player.number = player.number + Spawn.number
+      player.collided = true
       table.remove(spawn, i)
+      droplets[math.random(5)]:play()
     end
   end
   end
@@ -202,6 +220,7 @@ function goldCollide(storms, goldclouds, player)
           storms[k] = nil
         end
         table.remove(goldclouds, i)
+        clearskies:play()
       end
     end
   end
@@ -224,6 +243,7 @@ function love.mousepressed( x, y, button, istouch )
      if gamestate == "won" or gamestate == "lost" then
        gamestate = "play"
        Restart(player,pickups,storms,goldclouds)
+       startsound:play()
      end
    end
 end
@@ -236,11 +256,21 @@ function love.update(dt)
   if gamestate == "title" then
     if love.mouse.isDown(1) then
       gamestate = "play"
+      startsound:play()
     end
     clicktoplay:update(dt)
   end
 
+  if gamestate == "play" then
+    secondTime = secondTime + dt
+    if secondTime > 1 then
+      totalTime = totalTime + 1
+      secondTime = 0
+    end
+  end
+
   if gamestate == "play" or gamestate == "won" or gamestate == "lost" then
+
   player:update(dt)
 
   if timePassedPickup(dt,2) then
@@ -346,6 +376,10 @@ function love.draw()
   if gamestate == "won" then
     love.graphics.draw(wintext, 200, 200)
     love.graphics.draw(playagaintext, 200, 450)
+    love.graphics.draw(timerMessage, 243, 375)
+
+    love.graphics.setColor(27,61,80)
+    love.graphics.printf(tostring(totalTime), 500, 363, 100, "center")
   end
   if gamestate == "lost" then
     if player.number < 0 then

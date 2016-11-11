@@ -27,6 +27,8 @@ function player:new(x,y,w,h,ux,uy,push,drag,number)
     y = {0,0,0,0,0,0,0,0}
   }
 
+  growthFromCollision = {1.05, 1.075, 1.09, 1.1, 1.09, 1.075, 1.05}
+
   o = {
     spriteSheet = playerImage,
     animations = animations,
@@ -46,6 +48,8 @@ function player:new(x,y,w,h,ux,uy,push,drag,number)
     drag = drag,
     number = number,
     numPositions = numPositions,
+    growthFromCollision = growthFromCollision,
+    currGrowth = 1,
 
     collOffX = collOffX,
     collOffY = collOffY,
@@ -65,7 +69,8 @@ function player:new(x,y,w,h,ux,uy,push,drag,number)
     offsetx = 75,
     offsety = 75,
 
-    control = true
+    control = true,
+    collided = false
   }
   setmetatable(o, self)
   self.__index = self
@@ -84,6 +89,16 @@ function player:update(dt)
     else
       self.currFrame = 1
     end
+--[[
+    if self.collided then
+      if self.currGrowth < #self.growthFromCollision then
+        self.currGrowth = self.currGrowth + 1
+      else
+        self.collided = false
+        self.currGrowth = 1
+      end
+    end
+]]
     self.elapsedTime = 0
   end
 
@@ -141,6 +156,11 @@ function player:update(dt)
 end
 
 function player:draw()
+--[[ if self.collided then
+    self.scalex = self.growthFromCollision[self.currGrowth]
+    self.scaley = self.growthFromCollision[self.currGrowth]
+  end
+]]
   love.graphics.setColor(255,255,255)
   love.graphics.draw(
   self.spriteSheet,
