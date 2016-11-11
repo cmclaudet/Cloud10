@@ -96,9 +96,9 @@ function storm:draw()
   love.graphics.setColor(30,30,30)
 
   if self.number > 0 then
-    self.sign = "-"
-  else
     self.sign = "+"
+  else
+    self.sign = "-"
   end
 
   noWidth = self.font:getWidth(self.sign)
