@@ -1,12 +1,17 @@
 
 pickup = {}
 
-function pickup:new(x,y,xdir,ydir,speed,number)
+function pickup:new(x,y,xdir,ydir,number)
   pickupImage = love.graphics.newImage("assets/pickupspritesheet.png")
-  fontPickup = love.graphics.newFont("assets/sitka-small-bold.ttf",65)
-  collOffX = 30
-  collOffY = 40
-  collBoxW = 60
+  fontPickup = love.graphics.newFont("assets/sitka-small-bold.ttf",47)
+  collOffX = 25
+  collOffY = 30
+  collBoxW = 40
+
+  numOffx = -18
+  numOffy = -20
+
+  speed = math.random(200,300)
 
   animations = {
     idle = {
@@ -43,6 +48,8 @@ function pickup:new(x,y,xdir,ydir,speed,number)
     ydir = ydir,
     speed = speed,
     number = number,
+    numOffx = numOffx,
+    numOffy = numOffy,
     numPositions = numPositions,
     collOffX = collOffX,
     collOffY = collOffY,
@@ -53,7 +60,13 @@ function pickup:new(x,y,xdir,ydir,speed,number)
       y = y + collOffY,
       w = collBoxW,
       h = collBoxW
-    }
+    },
+
+    rot = 0,
+    scalex = 0.75,
+    scaley = 0.75,
+    offsetx = 0,
+    offsety = 0
   }
 
   setmetatable(o, self)
@@ -87,7 +100,12 @@ function pickup:draw()
   self.spriteSheet,
   self.currAnim[self.currFrame],
   self.x,
-  self.y
+  self.y,
+  self.rot,
+  self.scalex,
+  self.scaley,
+  self.offsetx,
+  self.offsety
   )
 
   love.graphics.setFont(self.font)
@@ -96,8 +114,8 @@ function pickup:draw()
 
   noWidth = self.font:getWidth(tostring(self.number))
   noHeight = self.font:getHeight(tostring(self.number))
-  numX = self.x + self.w/2 - noWidth/2-3
-  numY = self.y + self.h/2 - noHeight/2-5
+  numX = self.x + self.w/2 - noWidth/2 + self.numOffx
+  numY = self.y + self.h/2 - noHeight/2 + self.numOffy
 
   love.graphics.print(
   tostring(self.number),

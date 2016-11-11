@@ -2,12 +2,12 @@ player = {}
 
 function player:new(x,y,w,h,ux,uy,push,drag,number)
   playerImage = love.graphics.newImage("assets/playerspritesheet.png")
-  fontPlayer = love.graphics.newFont("assets/sitka-small-bold.ttf",75)
+  fontPlayer = love.graphics.newFont("assets/sitka-small-bold.ttf",45)
 
-  collOffX = -37.5
-  collOffY = -35
-  collBoxW = 75
-  collBoxH = 50
+  collOffX = -33
+  collOffY = -25
+  collBoxW = 60
+  collBoxH = 40
 
   animations = {
     idle = {
@@ -60,8 +60,8 @@ function player:new(x,y,w,h,ux,uy,push,drag,number)
     },
 
     rot = 0,
-    scalex = 1,
-    scaley = 1,
+    scalex = 0.75,
+    scaley = 0.75,
     offsetx = 75,
     offsety = 75,
 
