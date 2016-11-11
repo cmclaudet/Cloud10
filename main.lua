@@ -3,10 +3,17 @@ local player = require("player")
 local Pickup = require("pickup")
 local Storm = require("storm")
 local Gold = require("gold")
+local Bckcloud = require("bckcloud")
+local Clicktoplay = require("clicktoPlay")
 
 --assets
 local background = love.graphics.newImage("assets/sky.png")
 local splash = love.graphics.newImage("assets/Splash.png")
+local wintext = love.graphics.newImage("assets/youwinfont.png")
+local toohightext = love.graphics.newImage("assets/toohighfont.png")
+local toolowtext = love.graphics.newImage("assets/toolowfont.png")
+local playagaintext = love.graphics.newImage("assets/playagainfont.png")
+
 local font = love.graphics.newFont("assets/sitka-small-bold.ttf",60)
 
 --gamestate
@@ -176,18 +183,6 @@ function checkSpawn(spawn,player)
   end
   end
 end
---[[
-function getGoldVals()
-  side = math.random(4)
-
-  values = {
-    {x = -spawnW, y = winHeight/2, dirx = 1, diry = 0},
-    {x = winWidth, y = winHeight/2, dirx = -1, diry = 0},
-    {x = winWidth/2, y = -spawnH, dirx = 0, diry = 1},
-    {x = winWidth/2, y = winHeight, dirx = 0, diry = -1}
-  }
-end
-]]
 
 function checkGoldSpawn()
   roll = math.random(5)
@@ -218,13 +213,31 @@ function love.load()
   pickups = {}
   storms = {}
   goldclouds = {}
+  bckclouds = {Bckcloud:new(300,50,0.75,4),Bckcloud:new(750,55,0.8,10),Bckcloud:new(75,60,0.85,2),
+               Bckcloud:new(150,200,0.9,8), Bckcloud:new(700,300,1,5),Bckcloud:new(-100,375,1.1,12),
+               Bckcloud:new(400,400,1.15,3), Bckcloud:new(750,520,1.2,15), Bckcloud:new(65, 625, 1.25,6)}
+  clicktoplay = Clicktoplay:new()
+end
+
+function love.mousepressed( x, y, button, istouch )
+   if button == 1 then
+     if gamestate == "won" or gamestate == "lost" then
+       gamestate = "play"
+       Restart(player,pickups,storms,goldclouds)
+     end
+   end
 end
 
 function love.update(dt)
+  for i,BckCloud in ipairs(bckclouds) do
+    BckCloud:update(dt)
+  end
+
   if gamestate == "title" then
     if love.mouse.isDown(1) then
       gamestate = "play"
     end
+    clicktoplay:update(dt)
   end
 
   if gamestate == "play" or gamestate == "won" or gamestate == "lost" then
@@ -299,13 +312,6 @@ function love.update(dt)
 
   end
 
-  if gamestate == "won" or gamestate == "lost" then
-    if love.mouse.isDown(1) then
-      Restart(player,pickups,storms,goldclouds)
-      gamestate = "play"
-    end
-  end
-
   if love.keyboard.isDown("escape") then
     love.event.quit()
   end
@@ -314,12 +320,13 @@ end
 function love.draw()
   love.graphics.setColor(255,255,255)
   love.graphics.draw(background)
+  for i,BckCloud in ipairs(bckclouds) do
+    BckCloud:draw()
+  end
+  love.graphics.setColor(255,255,255)
   if gamestate == "title" then
     love.graphics.draw(splash, 20, 0, 0, 0.65, 0.65)
-    love.graphics.setFont(font)
-    titleMsg = "Click to play!"
-    titleH = font:getHeight(titleMsg)
-    love.graphics.printf( titleMsg, winWidth/2-400, 3*winHeight/4-80, 800, "center")
+    clicktoplay:draw()
   end
 
   if gamestate == "play" or gamestate == "won" or gamestate == "lost" then
@@ -335,23 +342,18 @@ function love.draw()
 
   player:draw()
   end
-
+  love.graphics.setColor(255,255,255)
   if gamestate == "won" then
-    victory = "You got to 10!"
-    txtHeight = font:getHeight(victory)
-
-    love.graphics.setFont(font)
-    love.graphics.printf( victory, winWidth/2-400, winHeight/2-txtHeight/2, 800, "center")
+    love.graphics.draw(wintext, 200, 200)
+    love.graphics.draw(playagaintext, 200, 450)
   end
   if gamestate == "lost" then
     if player.number < 0 then
-      lostmsg = "You're way too low!"
+      love.graphics.draw(toolowtext, 200, 200)
     else
-      lostmsg = "You're way too high!"
+      love.graphics.draw(toohightext, 200, 200)
     end
-    txtHeight = font:getHeight(lostmsg)
-    love.graphics.setFont(font)
-    love.graphics.printf( lostmsg, winWidth/2-400, winHeight/2-txtHeight/2, 800, "center")
+    love.graphics.draw(playagaintext, 200, 450)
   end
 
 end
