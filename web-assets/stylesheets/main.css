@@ -1,0 +1,152 @@
+@font-face {
+  font-family: 'sitka-small-bold';
+  src: url('web-assets/game_assets/sitka-small-bold.woff2') format('woff2'),
+       url('web-assets/game_assets/sitka-small-bold.woff') format('woff'),
+       url('web-assets/game_assets/sitka-small-bold.ttf') format('truetype');
+}
+
+html,body {
+	/* ------------------------------ */
+	/*         Background             */
+	/* ------------------------------ */
+
+   background-image: linear-gradient(rgb(49, 145, 247), rgb(204, 234, 246));
+
+	/* ------------------------------ */
+	/*             Font               */
+	/* ------------------------------ */
+	font-family: 'stika-small-bold', Fallback, serif;
+	line-height: 1;
+	margin: 0;
+}
+h1{
+   font-family: "Comic Sans MS", "Comic Sans", cursive;
+   font-size: 2em;
+   color: rgb(255, 255, 255);
+   text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
+
+   text-align: center;
+}
+h2{
+   font-size: 1em;
+   text-align: center;
+}
+header{
+   height: auto;
+	/*border: 2px dashed rgb(0, 0, 0);*/
+}
+img.splash{
+	position: absolute;
+   left: 0;
+   right: 0;
+   margin-left: auto;
+   margin-right: auto;
+	width: 90%;
+	z-index: 1;
+
+	/*border: 4px dashed rgb(200, 0, 0);*/
+}
+img.cloudTen{
+   position: relative;
+	margin-left: 40%;
+	margin-top: 3%;
+   padding-bottom: 5%;
+   width: 50%;
+	animation: wobble ease-in-out 1s normal infinite;
+
+	/*border: 2px dashed rgb(32, 32, 32);*/
+}
+img.cloudWhite{
+	position: absolute;
+   height: 64px;
+   opacity: 0.5;
+   z-index: 0;
+
+	/*border: 4px dashed rgb(200, 0, 0);*/
+}
+.about{
+   position: relative;
+   text-align:justify;
+   width: 90%;
+   margin: 0 0 10% 5%;
+   padding: 8px 8px 8px 8px;
+   border-radius: 16px;
+   background-color: rgba(255, 255, 255, 0.25);
+   box-shadow: 3px 3px 5px 6px rgba(0, 0, 0, 0.25);
+   z-index: 1;
+
+   /*border: 2px dashed rgb(32, 32, 32);*/
+}
+.screenshots{
+   position: relative;
+   height: auto;
+   text-align: center;
+   margin-bottom: 10%;
+   z-index: 1;
+
+   /*border: 2px dashed rgb(255, 0, 0);*/
+}
+img.resize{
+   display: inline-block;
+   margin: 4% 2% 4% 2%;
+   width: 45%;
+   border-radius: 4%/6%;
+   box-shadow: 3px 3px 5px 6px rgba(0, 0, 0, 0.5);
+}
+.download{
+   position: relative;
+   height: 128px;
+   text-align: center;
+   margin: 5% 0 5% 0;
+   z-index: 1;
+
+   /*border: 2px dashed rgb(32, 32, 32);*/
+}
+.buttonDownload{
+   display: inline-block;
+   margin: 0 2% 0 2%;
+   width: 25%;
+   height: 25%;
+   line-height: 200%;
+   border-radius: 4%/24%;
+   box-shadow: 3px 3px 5px 6px rgba(0, 0, 0, 0.25);
+   background-color: rgba(0, 255, 0, 0.5);
+}
+footer{
+   position: relative;
+   text-align:justify;
+   height: 32px;
+   width: 90%;
+   margin: 0 0 0 5%;
+   padding: 1px 8px 8px 8px;
+   border-radius: 16px 16px 0 0;
+   background-color: rgba(255, 0, 0, 0.25);
+   box-shadow: 3px 3px 5px 6px rgba(0, 0, 0, 0.25);
+
+   /*border: 2px dashed rgb(32, 32, 32);*/
+}
+@keyframes wobble{
+   0%{
+      transform: rotate(0) scale(1);
+   }
+   50%{
+      transform:
+         rotate(5deg),
+         scale(1.1);
+   }
+   100%{
+      transform:
+         rotate(0),
+         scale(1);
+   }
+}
+@keyframes float{
+   0%{
+      left: -25%;
+      transform: rotate(0);
+   }
+   100%{
+      left: 100%;
+      transform: rotate(360deg);
+   }
+}
