@@ -250,8 +250,7 @@ end
 
 function love.update(dt)
   for i,BckCloud in ipairs(bckclouds) do
-    BckCloud:update(dt)
-  end
+    BckCloud:update(dt) end
 
   if gamestate == "title" then
     if love.mouse.isDown(1) then
@@ -318,13 +317,13 @@ function love.update(dt)
     Gold:update(dt)
   end
 
-  if #pickups > 50 then
+  if #pickups > 5 then
     table.remove(pickups, 1)
   end
-  if #storms > 50 then
+  if #storms > 15 then
     table.remove(storms, 1)
   end
-  if #goldclouds > 50 then
+  if #goldclouds > 1 then
     table.remove(goldclouds, 1)
   end
 
@@ -351,8 +350,7 @@ function love.draw()
   love.graphics.setColor(255,255,255)
   love.graphics.draw(background)
   for i,BckCloud in ipairs(bckclouds) do
-    BckCloud:draw()
-  end
+    BckCloud:draw() end
   love.graphics.setColor(255,255,255)
   if gamestate == "title" then
     love.graphics.draw(splash, 20, 0, 0, 0.65, 0.65)
