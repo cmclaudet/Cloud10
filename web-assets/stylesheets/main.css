@@ -131,12 +131,12 @@ footer{
    }
    50%{
       transform:
-         rotate(5deg),
+         rotate(5deg)
          scale(1.1);
    }
    100%{
       transform:
-         rotate(0),
+         rotate(0)
          scale(1);
    }
 }
