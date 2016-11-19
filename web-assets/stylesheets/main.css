@@ -1,40 +1,22 @@
-@font-face {
-  font-family: 'sitka-small-bold';
-  src: url('web-assets/game_assets/sitka-small-bold.woff2') format('woff2'),
-       url('web-assets/game_assets/sitka-small-bold.woff') format('woff'),
-       url('web-assets/game_assets/sitka-small-bold.ttf') format('truetype');
-}
-
+                           /* ============================== */
+                           /*           Format               */
+                           /* ============================== */
 html,body {
-	/* ------------------------------ */
-	/*         Background             */
-	/* ------------------------------ */
-
    background-image: linear-gradient(rgb(49, 145, 247), rgb(204, 234, 246));
-
-	/* ------------------------------ */
-	/*             Font               */
-	/* ------------------------------ */
-	font-family: 'stika-small-bold', Fallback, serif;
+	font-family: "Comic Sans MS", "Comic Sans", serif;
 	line-height: 1;
 	margin: 0;
 }
-h1{
-   font-family: "Comic Sans MS", "Comic Sans", cursive;
-   font-size: 2em;
-   color: rgb(255, 255, 255);
-   text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
-
-   text-align: center;
-}
-h2{
-   font-size: 1em;
-   text-align: center;
-}
+                           /* ============================== */
+                           /*             Header             */
+                           /* ============================== */
 header{
-   height: auto;
+   /*height: auto;*/
 	/*border: 2px dashed rgb(0, 0, 0);*/
 }
+                           /* ============================== */
+                           /*             Heading            */
+                           /* ============================== */
 img.splash{
 	position: absolute;
    left: 0;
@@ -64,67 +46,89 @@ img.cloudWhite{
 
 	/*border: 4px dashed rgb(200, 0, 0);*/
 }
-.about{
+                           /* ============================== */
+                           /*             Body               */
+                           /* ============================== */
+.area{
    position: relative;
-   text-align:justify;
-   width: 90%;
-   margin: 0 0 10% 5%;
-   padding: 8px 8px 8px 8px;
-   border-radius: 16px;
-   background-color: rgba(255, 255, 255, 0.25);
-   box-shadow: 3px 3px 5px 6px rgba(0, 0, 0, 0.25);
-   z-index: 1;
-
-   /*border: 2px dashed rgb(32, 32, 32);*/
-}
-.screenshots{
-   position: relative;
-   height: auto;
    text-align: center;
-   margin-bottom: 10%;
+   margin: 16% 0 16% 0;
    z-index: 1;
 
    /*border: 2px dashed rgb(255, 0, 0);*/
 }
-img.resize{
+img.title{
+   position: relative;
+   width: 50%;
+   margin: 0 0 2% 0;
+}
+                           /* ------------------------------ */
+                           /*             About              */
+                           /* ------------------------------ */
+.textBox{
+   text-align:justify;
+   width: 90%;
+   margin: 0 0 0 4%;
+   padding: 8px 8px 8px 8px;
+   border-radius: 16px;
+   background-color: rgba(255, 255, 255, 0.25);
+   box-shadow: 3px 3px 5px 6px rgba(0, 0, 0, 0.25);
+
+   /*border: 2px dashed rgb(32, 32, 32);*/
+}
+                           /* ------------------------------ */
+                           /*          Screenshots           */
+                           /* ------------------------------ */
+img.thumbnail{
    display: inline-block;
-   margin: 4% 2% 4% 2%;
+   margin: 0 2% 0 2%;
    width: 45%;
    border-radius: 4%/6%;
    box-shadow: 3px 3px 5px 6px rgba(0, 0, 0, 0.5);
 }
-.download{
-   position: relative;
-   height: 128px;
-   text-align: center;
-   margin: 5% 0 5% 0;
-   z-index: 1;
-
-   /*border: 2px dashed rgb(32, 32, 32);*/
-}
+                           /* ------------------------------ */
+                           /*           Downloads            */
+                           /* ------------------------------ */
 .buttonDownload{
    display: inline-block;
    margin: 0 2% 0 2%;
-   width: 25%;
+   width: 16%;
    height: 25%;
    line-height: 200%;
    border-radius: 4%/24%;
    box-shadow: 3px 3px 5px 6px rgba(0, 0, 0, 0.25);
    background-color: rgba(0, 255, 0, 0.5);
 }
+                           /* ------------------------------ */
+                           /*             Footer             */
+                           /* ------------------------------ */
 footer{
    position: relative;
-   text-align:justify;
+   text-align:center;
+   color: rgba(0, 0, 0,1);
+   font-size: 0.75em;
    height: 32px;
    width: 90%;
    margin: 0 0 0 5%;
-   padding: 1px 8px 8px 8px;
    border-radius: 16px 16px 0 0;
    background-color: rgba(255, 0, 0, 0.25);
    box-shadow: 3px 3px 5px 6px rgba(0, 0, 0, 0.25);
 
    /*border: 2px dashed rgb(32, 32, 32);*/
 }
+.contactLeft{
+   display: inline-block;
+   text-align: left;
+   width: 45%;
+}
+.contactRight{
+   display: inline-block;
+   text-align: right;
+   width: 45%;
+}
+                           /* ============================== */
+                           /*           Animations           */
+                           /* ============================== */
 @keyframes wobble{
    0%{
       transform: rotate(0) scale(1);
