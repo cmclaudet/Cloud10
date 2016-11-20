@@ -255,7 +255,7 @@ img.icon:hover{
       transform: translateY(0);
    }
    100%{
-      transform: translateY(-100%);
+      transform: translateY(-30%);
    }
 }
 @keyframes pointUp {
