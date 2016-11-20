@@ -5,6 +5,7 @@ html,body {
    background-image: linear-gradient(rgb(49, 145, 247), rgb(204, 234, 246));
 	font-family: "Comic Sans MS", "Comic Sans", "Verdana", "Geneva", sans-serif;
    font-size: 2.75vw;
+   overflow-x: hidden;
 	line-height: 1;
 	margin: 0;
 }
@@ -16,8 +17,8 @@ a{
                            /*             Header             */
                            /* ============================== */
 header{
-   /*height: auto;*/
-	/*border: 2px dashed rgb(0, 0, 0);*/
+   position: relative;
+	border: 2px dashed rgb(0, 0, 0);
 }
                            /* ============================== */
                            /*             Heading            */
@@ -45,7 +46,8 @@ img.cloudTen{
 }
 img.cloudWhite{
 	position: absolute;
-   height: 64px;
+   left: -10%;
+   width: 10%;
    opacity: 0.5;
    z-index: 0;
 
@@ -95,13 +97,14 @@ img.thumbnail{
                            /* ------------------------------ */
                            /*           Downloads            */
                            /* ------------------------------ */
+
 .buttonDownload{
    display: inline-block;
    margin: 0 2% 0 2%;
    width: 16%;
    height: 25%;
    line-height: 200%;
-   border-radius: 4%/24%;
+   border-radius: 4%/11%;
    box-shadow: 3px 3px 5px 6px rgba(0, 0, 0, 0.25);
    background-color: rgba(0, 255, 0, 0.5);
 }
@@ -121,6 +124,10 @@ footer{
 
    /*border: 2px dashed rgb(32, 32, 32);*/
 }
+footer:hover{
+   height: 64px;
+}
+
 .contactLeft{
    display: inline-block;
    text-align: left;
@@ -151,11 +158,9 @@ footer{
 }
 @keyframes float{
    0%{
-      left: -25%;
-      transform: rotate(0);
+      transform: translateX(0);
    }
    100%{
-      left: 100%;
-      transform: rotate(360deg);
+      transform: translateX(1100%);
    }
 }
