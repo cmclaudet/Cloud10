@@ -18,7 +18,7 @@ a{
                            /* ============================== */
 header{
    position: relative;
-   
+
 	/*border: 2px dashed rgb(0, 0, 0);*/
 }
                            /* ============================== */
@@ -119,12 +119,12 @@ footer{
    text-align:center;
    overflow-y: hidden;
 
-   /*border: 2px dashed rgb(32, 32, 32);*/
+   border: 2px dashed rgb(32, 32, 32);
 }
 .slider{
    display: inline-block;
    width: 90%;
-   margin: 7% 0 0 5%;
+   margin: 8% 0 0 5%;
    border-radius: 16px 16px 0 0;
    background-color: rgba(255, 0, 0, 0.25);
    box-shadow: 3px 3px 5px 6px rgba(0, 0, 0, 0.25);
@@ -148,18 +148,69 @@ footer{
    animation-iteration-count: 1;
    animation-fill-mode: forwards;
 }
+.slider:hover img.slide{
+   animation-name: pointDown;
+   animation-duration: 0.25s;
+   animation-timing-function: ease-out;
+   animation-delay: 0;
+   animation-direction: forwards;
+   animation-iteration-count: 1;
+   animation-fill-mode: forwards;
+}
+.slider:focus{
+   animation-name: slideOut;
+   animation-duration: 0.25s;
+   animation-timing-function: ease-out;
+   animation-delay: 0;
+   animation-direction: forwards;
+   animation-iteration-count: 1;
+   animation-fill-mode: forwards;
+}
+.slider:focus img.slide{
+   animation-name: pointDown;
+   animation-duration: 0.25s;
+   animation-timing-function: ease-out;
+   animation-delay: 0;
+   animation-direction: forwards;
+   animation-iteration-count: 1;
+   animation-fill-mode: forwards;
+}
 .contact{
    color: rgba(0, 0, 0, 1);
    font-size: 2vw;
    display: inline-block;
    text-align: center;
-   width: 45%;
+   vertical-align: top;
+   padding-top: 1%;
+   padding-bottom: 5%;
+   width: 30%;
 
-   /*border: 1px dashed rgb(32, 32, 32);*/
+   border: 1px dashed rgb(32, 32, 32);
+}
+img.slide{
+   width: 10%;
+   opacity: 0.5;
+
+   animation-name: pointUp;
+   animation-duration: 0.25s;
+   animation-timing-function: ease-out;
+   animation-delay: 0;
+   animation-direction: forwards;
+   animation-iteration-count: 1;
+   animation-fill-mode: forwards;
+}
+img.slide:active{
+   animation-name: pointUp;
+   animation-duration: 0.25s;
+   animation-timing-function: ease-out;
+   animation-delay: 0;
+   animation-direction: forwards;
+   animation-iteration-count: 1;
+   animation-fill-mode: forwards;
 }
 img.icon{
    width: 10%;
-   padding: 5% 5% 0 5%;
+   padding: 5% 5% 5% 5%;
    opacity: 0.5;
 }
 img.icon:hover{
@@ -193,7 +244,7 @@ img.icon:hover{
 }
 @keyframes slideIn{
    0%{
-      transform: translateY(-50%);
+      transform: translateY(-30%);
    }
    100%{
       transform: translateY(0);
@@ -204,7 +255,23 @@ img.icon:hover{
       transform: translateY(0);
    }
    100%{
-      transform: translateY(-50%);
-      animation-play-state: paused;
+      transform: translateY(-30%);
    }
+}
+@keyframes pointUp {
+   0%{
+      transform: rotate(-180deg);
+   }
+   100%{
+      transform: rotate(0);
+   }
+}
+@keyframes pointDown {
+   0%{
+      transform: rotate(0);
+   }
+   100%{
+      transform: rotate(-180deg);
+   }
+}
 }
