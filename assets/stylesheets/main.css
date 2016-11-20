@@ -18,7 +18,8 @@ a{
                            /* ============================== */
 header{
    position: relative;
-	border: 2px dashed rgb(0, 0, 0);
+   
+	/*border: 2px dashed rgb(0, 0, 0);*/
 }
                            /* ============================== */
                            /*             Heading            */
@@ -112,31 +113,57 @@ img.thumbnail{
                            /*             Footer             */
                            /* ------------------------------ */
 footer{
+   /*padding-top: 10%;*/
    position: relative;
+   height: 12vw;
    text-align:center;
-   color: rgba(0, 0, 0, 1);
-   font-size: 2vw;
+   overflow-y: hidden;
+
+   /*border: 2px dashed rgb(32, 32, 32);*/
+}
+.slider{
+   display: inline-block;
    width: 90%;
-   margin: 0 0 0 5%;
+   margin: 7% 0 0 5%;
    border-radius: 16px 16px 0 0;
    background-color: rgba(255, 0, 0, 0.25);
    box-shadow: 3px 3px 5px 6px rgba(0, 0, 0, 0.25);
 
-   /*border: 2px dashed rgb(32, 32, 32);*/
-}
-footer:hover{
-   height: 64px;
-}
+   animation-name: slideIn;
+   animation-duration: 0.25s;
+   animation-timing-function: ease-out;
+   animation-delay: 0;
+   animation-direction: forwards;
+   animation-iteration-count: 1;
+   animation-fill-mode: forwards;
 
-.contactLeft{
-   display: inline-block;
-   text-align: left;
-   width: 45%;
+   /*border: 1px dashed rgb(32, 32, 32);*/
 }
-.contactRight{
+.slider:hover{
+   animation-name: slideOut;
+   animation-duration: 0.25s;
+   animation-timing-function: ease-out;
+   animation-delay: 0;
+   animation-direction: forwards;
+   animation-iteration-count: 1;
+   animation-fill-mode: forwards;
+}
+.contact{
+   color: rgba(0, 0, 0, 1);
+   font-size: 2vw;
    display: inline-block;
-   text-align: right;
+   text-align: center;
    width: 45%;
+
+   /*border: 1px dashed rgb(32, 32, 32);*/
+}
+img.icon{
+   width: 10%;
+   padding: 5% 5% 0 5%;
+   opacity: 0.5;
+}
+img.icon:hover{
+   opacity: 1;
 }
                            /* ============================== */
                            /*           Animations           */
@@ -162,5 +189,22 @@ footer:hover{
    }
    100%{
       transform: translateX(1100%);
+   }
+}
+@keyframes slideIn{
+   0%{
+      transform: translateY(-50%);
+   }
+   100%{
+      transform: translateY(0);
+   }
+}
+@keyframes slideOut{
+   0%{
+      transform: translateY(0);
+   }
+   100%{
+      transform: translateY(-50%);
+      animation-play-state: paused;
    }
 }
