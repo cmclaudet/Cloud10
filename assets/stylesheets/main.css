@@ -139,7 +139,7 @@ footer{
 
    /*border: 1px dashed rgb(32, 32, 32);*/
 }
-.slider:hover{
+.slider:hover, .slider:focus{
    animation-name: slideOut;
    animation-duration: 0.25s;
    animation-timing-function: ease-out;
@@ -148,25 +148,7 @@ footer{
    animation-iteration-count: 1;
    animation-fill-mode: forwards;
 }
-.slider:hover img.slide{
-   animation-name: pointDown;
-   animation-duration: 0.25s;
-   animation-timing-function: ease-out;
-   animation-delay: 0;
-   animation-direction: forwards;
-   animation-iteration-count: 1;
-   animation-fill-mode: forwards;
-}
-.slider:focus{
-   animation-name: slideOut;
-   animation-duration: 0.25s;
-   animation-timing-function: ease-out;
-   animation-delay: 0;
-   animation-direction: forwards;
-   animation-iteration-count: 1;
-   animation-fill-mode: forwards;
-}
-.slider:focus img.slide{
+.slider:hover img.slide, .slider:focus img.slide{
    animation-name: pointDown;
    animation-duration: 0.25s;
    animation-timing-function: ease-out;
