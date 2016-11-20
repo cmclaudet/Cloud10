@@ -3,7 +3,7 @@
                            /* ============================== */
 html,body {
    background-image: linear-gradient(rgb(49, 145, 247), rgb(204, 234, 246));
-	font-family: "Comic Sans MS", "Comic Sans", serif;
+	font-family: "Comic Sans MS", "Comic Sans", "Verdana", "Geneva", sans-serif;
    font-size: 2.75vw;
 	line-height: 1;
 	margin: 0;
