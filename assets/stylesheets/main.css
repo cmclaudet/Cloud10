@@ -70,6 +70,24 @@ img.title{
    width: 50%;
    margin: 0 0 2% 0;
 }
+body:focus .slider{
+   animation-name: slideIn;
+   animation-duration: 0.25s;
+   animation-timing-function: ease-out;
+   animation-delay: 0;
+   animation-direction: forwards;
+   animation-iteration-count: 1;
+   animation-fill-mode: forwards;
+}
+body:focus img.slide{
+   animation-name: pointUp;
+   animation-duration: 0.25s;
+   animation-timing-function: ease-out;
+   animation-delay: 0;
+   animation-direction: forwards;
+   animation-iteration-count: 1;
+   animation-fill-mode: forwards;
+}
                            /* ------------------------------ */
                            /*             About              */
                            /* ------------------------------ */
@@ -119,7 +137,7 @@ footer{
    text-align:center;
    overflow-y: hidden;
 
-   border: 2px dashed rgb(32, 32, 32);
+   /*border: 2px dashed rgb(32, 32, 32);*/
 }
 .slider{
    display: inline-block;
@@ -167,7 +185,7 @@ footer{
    padding-bottom: 5%;
    width: 30%;
 
-   border: 1px dashed rgb(32, 32, 32);
+   /*border: 1px dashed rgb(32, 32, 32);*/
 }
 img.slide{
    width: 10%;
