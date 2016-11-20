@@ -1,0 +1,166 @@
+                           /* ============================== */
+                           /*           Format               */
+                           /* ============================== */
+html,body {
+   background-image: linear-gradient(rgb(49, 145, 247), rgb(204, 234, 246));
+	font-family: "Comic Sans MS", "Comic Sans", "Verdana", "Geneva", sans-serif;
+   font-size: 2.75vw;
+   overflow-x: hidden;
+	line-height: 1;
+	margin: 0;
+}
+a{
+   color: inherit;
+   text-decoration: none;
+}
+                           /* ============================== */
+                           /*             Header             */
+                           /* ============================== */
+header{
+   position: relative;
+	border: 2px dashed rgb(0, 0, 0);
+}
+                           /* ============================== */
+                           /*             Heading            */
+                           /* ============================== */
+img.splash{
+	position: absolute;
+   left: 0;
+   right: 0;
+   margin-left: auto;
+   margin-right: auto;
+	width: 90%;
+	z-index: 1;
+
+	/*border: 4px dashed rgb(200, 0, 0);*/
+}
+img.cloudTen{
+   position: relative;
+	margin-left: 40%;
+	margin-top: 3%;
+   padding-bottom: 5%;
+   width: 50%;
+	animation: wobble ease-in-out 1s normal infinite;
+
+	/*border: 2px dashed rgb(32, 32, 32);*/
+}
+img.cloudWhite{
+	position: absolute;
+   left: -10%;
+   width: 10%;
+   opacity: 0.5;
+   z-index: 0;
+
+	/*border: 4px dashed rgb(200, 0, 0);*/
+}
+                           /* ============================== */
+                           /*             Body               */
+                           /* ============================== */
+.area{
+   position: relative;
+   text-align: center;
+   margin: 16% 0 16% 0;
+   z-index: 1;
+
+   /*border: 2px dashed rgb(255, 0, 0);*/
+}
+img.title{
+   position: relative;
+   width: 50%;
+   margin: 0 0 2% 0;
+}
+                           /* ------------------------------ */
+                           /*             About              */
+                           /* ------------------------------ */
+.textBox{
+   text-align:justify;
+   color: rgba(0, 0, 0, 0.75);
+   width: 90%;
+   margin: 0 0 0 4%;
+   padding: 8px 8px 8px 8px;
+   border-radius: 16px;
+   background-color: rgba(255, 255, 255, 0.25);
+   box-shadow: 3px 3px 5px 6px rgba(0, 0, 0, 0.25);
+
+   /*border: 2px dashed rgb(32, 32, 32);*/
+}
+                           /* ------------------------------ */
+                           /*          Screenshots           */
+                           /* ------------------------------ */
+img.thumbnail{
+   display: inline-block;
+   margin: 0 2% 0 2%;
+   width: 45%;
+   border-radius: 4%/6%;
+   box-shadow: 3px 3px 5px 6px rgba(0, 0, 0, 0.5);
+}
+                           /* ------------------------------ */
+                           /*           Downloads            */
+                           /* ------------------------------ */
+
+.buttonDownload{
+   display: inline-block;
+   margin: 0 2% 0 2%;
+   width: 16%;
+   height: 25%;
+   line-height: 200%;
+   border-radius: 4%/11%;
+   box-shadow: 3px 3px 5px 6px rgba(0, 0, 0, 0.25);
+   background-color: rgba(0, 255, 0, 0.5);
+}
+                           /* ------------------------------ */
+                           /*             Footer             */
+                           /* ------------------------------ */
+footer{
+   position: relative;
+   text-align:center;
+   color: rgba(0, 0, 0, 1);
+   font-size: 2vw;
+   width: 90%;
+   margin: 0 0 0 5%;
+   border-radius: 16px 16px 0 0;
+   background-color: rgba(255, 0, 0, 0.25);
+   box-shadow: 3px 3px 5px 6px rgba(0, 0, 0, 0.25);
+
+   /*border: 2px dashed rgb(32, 32, 32);*/
+}
+footer:hover{
+   height: 64px;
+}
+
+.contactLeft{
+   display: inline-block;
+   text-align: left;
+   width: 45%;
+}
+.contactRight{
+   display: inline-block;
+   text-align: right;
+   width: 45%;
+}
+                           /* ============================== */
+                           /*           Animations           */
+                           /* ============================== */
+@keyframes wobble{
+   0%{
+      transform: rotate(0) scale(1);
+   }
+   50%{
+      transform:
+         rotate(5deg)
+         scale(1.1);
+   }
+   100%{
+      transform:
+         rotate(0)
+         scale(1);
+   }
+}
+@keyframes float{
+   0%{
+      transform: translateX(0);
+   }
+   100%{
+      transform: translateX(1100%);
+   }
+}
