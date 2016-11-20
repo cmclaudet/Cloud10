@@ -94,9 +94,9 @@ body:focus img.slide{
 .textBox{
    text-align:justify;
    color: rgba(0, 0, 0, 0.75);
-   width: 90%;
+   width: 85%;
    margin: 0 0 0 4%;
-   padding: 8px 8px 8px 8px;
+   padding: 3% 3% 3% 3%;
    border-radius: 16px;
    background-color: rgba(255, 255, 255, 0.25);
    box-shadow: 3px 3px 5px 6px rgba(0, 0, 0, 0.25);
