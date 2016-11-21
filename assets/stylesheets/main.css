@@ -41,7 +41,11 @@ img.cloudTen{
 	margin-top: 3%;
    padding-bottom: 5%;
    width: 50%;
-	animation: wobble ease-in-out 1s normal infinite;
+
+   -webkit-animation:   wobble 1s ease-in-out normal infinite forwards;
+   -moz-animation:      wobble 1s ease-in-out normal infinite forwards;
+   -o-animation:        wobble 1s ease-in-out normal infinite forwards;
+   animation:           wobble 1s ease-in-out normal infinite forwards;
 
 	/*border: 2px dashed rgb(32, 32, 32);*/
 }
@@ -71,22 +75,16 @@ img.title{
    margin: 0 0 2% 0;
 }
 body:focus .slider{
-   animation-name: slideIn;
-   animation-duration: 0.25s;
-   animation-timing-function: ease-out;
-   animation-delay: 0;
-   animation-direction: forwards;
-   animation-iteration-count: 1;
-   animation-fill-mode: forwards;
+   -webkit-animation:   slideIn 0.25s ease-out normal 1 forwards;
+   -moz-animation:      slideIn 0.25s ease-out normal 1 forwards;
+   -o-animation:        slideIn 0.25s ease-out normal 1 forwards;
+   animation:           slideIn 0.25s ease-out normal 1 forwards;
 }
 body:focus img.slide{
-   animation-name: pointUp;
-   animation-duration: 0.25s;
-   animation-timing-function: ease-out;
-   animation-delay: 0;
-   animation-direction: forwards;
-   animation-iteration-count: 1;
-   animation-fill-mode: forwards;
+   -webkit-animation:   pointUp 0.25s ease-out normal 1 forwards;
+   -moz-animation:      pointUp 0.25s ease-out normal 1 forwards;
+   -o-animation:        pointUp 0.25s ease-out normal 1 forwards;
+   animation:           pointUp 0.25s ease-out normal 1 forwards;
 }
                            /* ------------------------------ */
                            /*             About              */
@@ -147,33 +145,25 @@ footer{
    background-color: rgba(255, 0, 0, 0.25);
    box-shadow: 3px 3px 5px 6px rgba(0, 0, 0, 0.25);
 
-   animation-name: slideIn;
-   animation-duration: 0.25s;
-   animation-timing-function: ease-out;
-   animation-delay: 0;
-   animation-direction: forwards;
-   animation-iteration-count: 1;
-   animation-fill-mode: forwards;
+   -webkit-animation:   slideIn 0.25s ease-out normal 1 forwards;
+   -moz-animation:      slideIn 0.25s ease-out normal 1 forwards;
+   -o-animation:        slideIn 0.25s ease-out normal 1 forwards;
+   animation:           slideIn 0.25s ease-out normal 1 forwards;
 
    /*border: 1px dashed rgb(32, 32, 32);*/
 }
 .slider:hover, .slider:focus{
-   animation-name: slideOut;
-   animation-duration: 0.25s;
-   animation-timing-function: ease-out;
-   animation-delay: 0;
-   animation-direction: forwards;
-   animation-iteration-count: 1;
-   animation-fill-mode: forwards;
+   -webkit-animation:   slideOut 0.25s ease-out normal 1 forwards;
+   -moz-animation:      slideOut 0.25s ease-out normal 1 forwards;
+   -o-animation:        slideOut 0.25s ease-out normal 1 forwards;
+   animation:           slideOut 0.25s ease-out normal 1 forwards;
+
 }
 .slider:hover img.slide, .slider:focus img.slide{
-   animation-name: pointDown;
-   animation-duration: 0.25s;
-   animation-timing-function: ease-out;
-   animation-delay: 0;
-   animation-direction: forwards;
-   animation-iteration-count: 1;
-   animation-fill-mode: forwards;
+   -webkit-animation:   pointDown 0.25s ease-out normal 1 forwards;
+   -moz-animation:      pointDown 0.25s ease-out normal 1 forwards;
+   -o-animation:        pointDown 0.25s ease-out normal 1 forwards;
+   animation:           pointDown 0.25s ease-out normal 1 forwards;
 }
 .contact{
    color: rgba(0, 0, 0, 1);
@@ -191,22 +181,10 @@ img.slide{
    width: 10%;
    opacity: 0.5;
 
-   animation-name: pointUp;
-   animation-duration: 0.25s;
-   animation-timing-function: ease-out;
-   animation-delay: 0;
-   animation-direction: forwards;
-   animation-iteration-count: 1;
-   animation-fill-mode: forwards;
-}
-img.slide:active{
-   animation-name: pointUp;
-   animation-duration: 0.25s;
-   animation-timing-function: ease-out;
-   animation-delay: 0;
-   animation-direction: forwards;
-   animation-iteration-count: 1;
-   animation-fill-mode: forwards;
+   -webkit-animation:   pointUp 0.25s ease-out normal 1 forwards;
+   -moz-animation:      pointUp 0.25s ease-out normal 1 forwards;
+   -o-animation:        pointUp 0.25s ease-out normal 1 forwards;
+   animation:           pointUp 0.25s ease-out normal 1 forwards;
 }
 img.icon{
    width: 10%;
@@ -221,7 +199,9 @@ img.icon:hover{
                            /* ============================== */
 @keyframes wobble{
    0%{
-      transform: rotate(0) scale(1);
+      transform:
+         rotate(0)
+         scale(1);
    }
    50%{
       transform:
@@ -273,5 +253,4 @@ img.icon:hover{
    100%{
       transform: rotate(-180deg);
    }
-}
 }
