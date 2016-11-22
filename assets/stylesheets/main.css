@@ -53,15 +53,6 @@ img.cloudTen{
 
 	/*border: 2px dashed rgb(32, 32, 32);*/
 }
-img.cloudWhite{
-	position: absolute;
-   left: -10%;
-   width: 10%;
-   opacity: 0.5;
-   z-index: 0;
-
-	/*border: 4px dashed rgb(200, 0, 0);*/
-}
                            /* ============================== */
                            /*             Body               */
                            /* ============================== */

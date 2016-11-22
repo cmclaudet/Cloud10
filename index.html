@@ -15,7 +15,7 @@
 </head>
 <body>
    <header>
-      <!--<img src="assets/cloudWhite_64_2.svg" alt="10" class="cloudWhite" style="position:absolute; bottom: 0; animation:float linear 10s normal 0 infinite;"/>-->
+      <img src="assets/cloudWhite_64_2.svg" alt="10" class="cloudWhite" style="position:absolute; bottom: 0; animation:float linear 10s normal 0 infinite;"/>
       <img src="assets/splash.svg" alt="Cloud" class="splash"/>
       <img src="assets/10.svg" alt="10" class="cloudTen"/>
    </header>
@@ -56,8 +56,10 @@
          </div>
       </div>
    </footer>
-   <!--
-   <script type="text/javascript" src=js/test.js></script>
-   -->
+   <script src=js/test.js></script>
+   <script type="text/javascript">
+      window.onload = test();
+      window.onload = countElements("cloudWhite");
+   </script>
 </body>
 </html>
