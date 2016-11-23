@@ -57,6 +57,17 @@ img.cloudTen{
 
 	/*border: 2px dashed rgb(32, 32, 32);*/
 }
+                           /* ============================== */
+                           /*             Body               */
+                           /* ============================== */
+.area{
+   position: relative;
+   text-align: center;
+   margin: 16% 0 16% 0;
+   z-index: 1;
+
+   /*border: 2px dashed rgb(255, 0, 0);*/
+}
 img.cloudling{
    position: absolute;
    width: 10%;
@@ -71,16 +82,19 @@ img.cloudling{
 
 	/*border: 4px dashed rgb(200, 0, 0);*/
 }
-                           /* ============================== */
-                           /*             Body               */
-                           /* ============================== */
-.area{
-   position: relative;
-   text-align: center;
-   margin: 16% 0 16% 0;
-   z-index: 1;
+img.goldenCloud{
+   position: absolute;
+   width: 10%;
+   left: -10%;
+   opacity: 1;
+   z-index: 0;
 
-   /*border: 2px dashed rgb(255, 0, 0);*/
+   -webkit-animation:   rush 1s linear normal 1 forwards;
+   -moz-animation:      rush 1s linear normal 1 forwards;
+   -o-animation:        rush 1s linear normal 1 forwards;
+   animation:           rush 1s linear normal 1 forwards;
+
+	/*border: 4px dashed rgb(200, 0, 0);*/
 }
 img.title{
    position: relative;
@@ -233,6 +247,14 @@ img.icon:hover{
    }
    100%{
       transform: translateX(1100%);
+   }
+}
+@keyframes rush{
+   0%{
+      transform: translate(0,0);
+   }
+   100%{
+      transform: translate(1100%,200%);
    }
 }
 @keyframes slideIn{
