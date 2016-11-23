@@ -4,7 +4,7 @@
 
 function placeRandomCloud(tagName){
    target = document.getElementsByTagName(tagName);
-   pos = Math.random()*100 + "%"
+   pos = Math.random()*90 + "%"
 
    var img = new Image();
    img.src = "assets/cloudWhite_64.svg";
@@ -55,7 +55,7 @@ function placeGoldenCloud(tagName){
 /* ============================== */
 
 window.onload = function(){
-   setInterval("cloudRate('body','cloudling',20)",500);
+   setInterval("cloudRate('body','cloudling',30)",333);
 }
 
 /* ============================== */

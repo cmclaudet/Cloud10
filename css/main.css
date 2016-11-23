@@ -13,6 +13,9 @@ html,body {
    font-size: 2.75vw;
    overflow-x: hidden;
 }
+body{
+   position: absolute;
+}
 a{
    color: inherit;
    text-decoration: none;
