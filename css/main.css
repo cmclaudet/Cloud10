@@ -7,11 +7,14 @@
                            /* ============================== */
                            /*           Format               */
                            /* ============================== */
-html{
+html,body {
    background-image: linear-gradient(rgb(49, 145, 247), rgb(204, 234, 246));
 	font-family: "Comic Sans MS", "Comic Sans", "Verdana", "Geneva", sans-serif;
    font-size: 2.75vw;
    overflow-x: hidden;
+}
+body{
+   position: absolute;
 }
 a{
    color: inherit;
@@ -35,7 +38,7 @@ img.splash{
    margin-left: auto;
    margin-right: auto;
 	width: 90%;
-	z-index: 1;
+	z-index: 2;
 
 	/*border: 4px dashed rgb(200, 0, 0);*/
 }
@@ -45,6 +48,7 @@ img.cloudTen{
 	margin-top: 3%;
    padding-bottom: 5%;
    width: 50%;
+   z-index: 1;
 
    -webkit-animation:   wobble 1s ease-in-out normal infinite forwards;
    -moz-animation:      wobble 1s ease-in-out normal infinite forwards;
@@ -52,6 +56,20 @@ img.cloudTen{
    animation:           wobble 1s ease-in-out normal infinite forwards;
 
 	/*border: 2px dashed rgb(32, 32, 32);*/
+}
+img.cloudling{
+   position: absolute;
+   width: 10%;
+   left: -10%;
+   opacity: 0.5;
+   z-index: 0;
+
+   -webkit-animation:   float 10s linear normal 1 forwards;
+   -moz-animation:      float 10s linear normal 1 forwards;
+   -o-animation:        float 10s linear normal 1 forwards;
+   animation:           float 10s linear normal 1 forwards;
+
+	/*border: 4px dashed rgb(200, 0, 0);*/
 }
                            /* ============================== */
                            /*             Body               */

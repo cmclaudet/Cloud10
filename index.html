@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-   <link rel="stylesheet" href="assets/stylesheets/main.css">
+   <link rel="stylesheet" href="css/main.css">
    <meta charset="utf-8">
    <title>Cloud 10</title>
    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png">
@@ -14,48 +14,47 @@
    <meta name="theme-color" content="#ffffff">
 </head>
 <body>
-   <header>
-      <img src="assets/cloudWhite_64_2.svg" alt="10" class="cloudWhite" style="position:absolute; bottom: 0; animation:float linear 10s normal 0 infinite;"/>
-      <img src="assets/splash.svg" alt="Cloud" class="splash"/>
-      <img src="assets/10.svg" alt="10" class="cloudTen"/>
+   <header id="header">
+      <img src="assets/splashText.svg" alt="Cloud" class="splash"/>
+      <img src="assets/splashTen.svg" alt="10" class="cloudTen"/>
    </header>
-   <article class="area">
-      <h2><img src="assets/h1_about.svg" alt="About" class="title"/></h2>
+   <article class="area" id="about">
+      <h2><img src="assets/headerAbout.svg" alt="About" class="title"/></h2>
       <div class="textBox">
          Cloud 10 is a game in which the player must collect numbered clouds to get to 10. It was made in less than a week for the Kongregate November 2016 game jam under the theme "The Number 10".<br>
          <br>
          This game was developed by Catherine Claudet, a self taught game developer currently learning Unity and Love2D for cross platform game development.
       </div>
    </article>
-   <article class="area">
-      <h2><img src="assets/h1_screenshots.svg" alt="Screenshots" class="title"/></h2>
+   <article class="area" id="screenshots">
+      <h2><img src="assets/headerScreenshots.svg" alt="Screenshots" class="title"/></h2>
       <a href="assets/ss1.png" target="_blank"><img src="assets/ss1.png" alt="ss1" class="thumbnail"/></a>
       <a href="assets/ss2.png" target="_blank"><img src="assets/ss2.png" alt="ss2" class="thumbnail"/></a>
    </article>
-   <article class="area">
-      <h2><img src="assets/h1_downloads.svg" alt="Downloads" class="title"/></h2>
+   <article class="area" id="downloads">
+      <h2><img src="assets/headerDownloads.svg" alt="Downloads" class="title"/></h2>
       <a href="#"><div class="buttonDownload">PC</div></a>
       <a href="https://github.com/cmclaudet/Cloud-10/raw/master/release/Cloud10_macOS.zip"><div class="buttonDownload">Mac</div></a>
       <a href="https://github.com/cmclaudet/Cloud-10/archive/master.zip"><div class="buttonDownload">Source</div></a>
    </article>
-   <footer>
+   <footer id="contact">
       <div class="slider">
          <div class="contact">
             Game by cmclaudet.<br>
-            <a href="https://www.linkedin.com/in/catherine-claudet-63507ab0?trk=hp-identity-name" target="_blank"><img src="assets/linkedinLogo.svg" alt="LinkedIn" class="icon"/></a>
-            <a href="https://github.com/cmclaudet" target="_blank"><img src="assets/githubLogo.svg" alt="Github" class="icon"/></a>
+            <a href="https://www.linkedin.com/in/catherine-claudet-63507ab0?trk=hp-identity-name" target="_blank"><img src="assets/logoLinkedin.svg" alt="LinkedIn" class="icon"/></a>
+            <a href="https://github.com/cmclaudet" target="_blank"><img src="assets/logoGithub.svg" alt="Github" class="icon"/></a>
          </div>
          <div class="contact" id="test">
             <img src="assets/slide.svg" alt="" class="slide"/>
          </div>
          <div class="contact">
             Webpage by lfbusta.<br>
-            <a href="https://www.linkedin.com/in/luis-busta-42b621121?trk=hp-identity-name" target="_blank"><img src="assets/linkedinLogo.svg" alt="" class="icon"/></a>
-            <a href="https://github.com/lfbusta" target="_blank"><img src="assets/githubLogo.svg" alt="Github" class="icon"/></a>
-            <!--<a href="#" target="_blank"><img src="assets/lLogo.svg" alt="webpage" class="icon"/></a>-->
+            <a href="https://www.linkedin.com/in/luis-busta-42b621121?trk=hp-identity-name" target="_blank"><img src="assets/logoLinkedin.svg" alt="" class="icon"/></a>
+            <a href="https://github.com/lfbusta" target="_blank"><img src="assets/logoGithub.svg" alt="Github" class="icon"/></a>
+            <!--<a href="#" target="_blank"><img src="assets/logoL.svg" alt="webpage" class="icon"/></a>-->
          </div>
       </div>
    </footer>
-   <script type="text/javascript"  src=assets/test.js></script>
+   <script src=js/main.js></script>
 </body>
 </html>
