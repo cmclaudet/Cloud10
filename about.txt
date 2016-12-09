@@ -1,0 +1,7 @@
+
+About Cloud 10
+
+Cloud 10 is a game in which the player must collect numbered clouds to get to 10.
+It was made in less than a week for the Kongregate November 2016 game jam under the theme "The Number 10".
+
+This game was developed by Catherine Claudet, a self taught game developer currently learning Unity and Love2D for cross platform game development.
