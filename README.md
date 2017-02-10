@@ -1,4 +1,4 @@
-# Cloud-10
+# Cloud10
 
 Pick up the clouds to get to 10!
 
